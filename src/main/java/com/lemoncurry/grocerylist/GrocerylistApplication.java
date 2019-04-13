@@ -17,9 +17,9 @@ public class GrocerylistApplication {
     @Bean
     CommandLineRunner runner(ItemService itemService) {
         return args -> {
-            itemService.save(new Item(1L, "Gurke", 3.00));
-            itemService.save(new Item(2L, "Apfel", 0.50));
-            itemService.save(new Item(3L, "Banane", 0.60));
+            itemService.save(new Item("Gurke", "Grocery"));
+            itemService.save(new Item("Apfel", "Grovery"));
+            itemService.save(new Item("Banane", "Grocery"));
         };
     }
 
