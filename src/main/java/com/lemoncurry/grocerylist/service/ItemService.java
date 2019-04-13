@@ -13,7 +13,7 @@ public interface ItemService {
 
     Item getItem(@Min(value = 1L, message = "Invalid product ID.") long id);
 
-    Item save(Item item);
+    void save(Item item);
 
     void deleteById(Long id);
 }
