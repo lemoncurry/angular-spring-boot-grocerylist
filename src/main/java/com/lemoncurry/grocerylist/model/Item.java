@@ -6,20 +6,19 @@ import javax.validation.constraints.NotNull;
 @Entity
 public class Item {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id @GeneratedValue(strategy = GenerationType.AUTO) private Long id;
 
     @NotNull(message = "Artikel muss eingegeben werden.")
     @Basic(optional = false)
     private String name;
 
-    private Double price;
+    private int quantity;
+    private String category;
 
-    public Item(Long id, @NotNull(message = "Artikel muss eingegeben werden.") String name, Double price) {
-        this.id = id;
+    public Item(@NotNull(message = "Artikel muss eingegeben werden.") String name, String category) {
         this.name = name;
-        this.price = price;
+        this.quantity = 1;
+        this.category = category;
     }
 
     public Item() {
@@ -41,11 +40,20 @@ public class Item {
         this.name = name;
     }
 
-    public Double getPrice() {
-        return price;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setPrice(Double price) {
-        this.price = price;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
 }
