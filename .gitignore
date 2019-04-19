@@ -24,5 +24,8 @@
 /.nb-gradle/
 /build/
 
+### Node Modules ###
+/src/angular-fe/node_modules/
+
 ### VS Code ###
 .vscode/
