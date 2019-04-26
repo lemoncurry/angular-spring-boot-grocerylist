@@ -63,7 +63,11 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-fe:build:production"
+              "browserTarget": "angular-fe:build:production",
+              "proxyConfig": "proxy.conf.json"
+            },
+            "dev": {
+              "browserTarget": "angular-fe:build:dev"
             }
           }
         },

@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ItemsComponent} from "./items/component/items.component";
+import {ItemsComponent} from "./items/items.component";
 
 @Component({
   selector: 'app-grocery-list',

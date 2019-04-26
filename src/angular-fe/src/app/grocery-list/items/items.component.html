@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="New Item" aria-label="New Item" #itemName
+    (keyup.enter)="add(itemName.value)">
+    <div class="input-group-append">
+      <button class="btn btn-primary" type="submit" (click)="add(itemName.value); itemName.value=''">Add Item</button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-action"
+        *ngFor="let item of items" [class.selected]="item === selectedItem"
+        (click)="onSelect(item)">{{item.name}}
+      <span class="badge badge-info">{{item.quantity}}</span></li>
+  </ul>
+</div>
