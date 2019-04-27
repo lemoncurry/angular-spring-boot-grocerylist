@@ -1,7 +1,8 @@
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Item} from './item'
-import {Observable} from "rxjs";
+
+import {Item} from './item';
+import {Observable} from 'rxjs';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -13,7 +14,7 @@ const httpOptions = {
 
 export class ItemService {
 
-  private itemsUrl = "/api/items";
+  private itemsUrl = '/api/items';
 
   constructor(private http: HttpClient) {
   }

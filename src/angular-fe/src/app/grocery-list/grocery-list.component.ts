@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ItemsComponent} from "./items/items.component";
+import {ItemsComponent} from './items/items.component';
 
 @Component({
   selector: 'app-grocery-list',
@@ -10,8 +10,8 @@ export class GroceryListComponent implements OnInit {
 
   private collapsed = true;
 
-  @ViewChild('productsC')
-  productsC: ItemsComponent;
+  @ViewChild('itemsC')
+  itemsC: ItemsComponent;
 
   constructor() { }
 
