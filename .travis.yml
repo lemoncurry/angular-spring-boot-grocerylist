@@ -1,4 +1,6 @@
 
+dist: xenial
+
 install:
   - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
   - cd src/angular-fe
