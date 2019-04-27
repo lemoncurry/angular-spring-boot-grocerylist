@@ -1,0 +1,22 @@
+
+dist: xenial
+
+install:
+  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - cd src/angular-fe
+  - npm install
+  - cd ../..
+
+script:
+  - ./mvnw test -B
+  - cd src/angular-fe
+  - npm run build
+  # - npm run lint
+  # - npm run test
+  - cd ../..
+  - ./mvnw package
+
+cache:
+  directories:
+    - $HOME/.m2
+    - src/angular-fe/node_modules/
