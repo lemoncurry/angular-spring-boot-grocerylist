@@ -1,16 +1,20 @@
-matrix:
-  include:
-    - language: java
-      cache:
-        directories:
-          - $HOME/.m2
-    - language: node_js
-      cache: npm
-      node_js:
-        - "9"
-      install:
-        - cd src/angular-fe
-        - npm install
-      script:
-        - npm run build
-        #- npm run lint
+
+install:
+  - ./mvnw install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
+  - cd src/angular-fe
+  - npm install
+  - cd ../..
+
+script:
+  - ./mvnw test -B
+  - cd src/angular-fe
+  - npm run build
+  # - npm run lint
+  # - npm run test
+  - cd ../..
+  - ./mvnw package
+
+cache:
+  directories:
+    - $HOME/.m2
+    - src/angular-fe/node_modules/
